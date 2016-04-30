@@ -1,1 +1,6 @@
-<h1>tab1</h1>
+<div ng-controller="Tab1Controller as tabCtrl">
+  <h1>tab1</h1>
+  <button type="button" class="btn btn-default"
+          ng-click="tabCtrl.open()">Open modal</button>
+  <p>Modal result = {{ tabCtrl.modalResult }}</p>
+</div>
