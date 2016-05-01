@@ -6,7 +6,7 @@
     return {
       restrict: 'A',
       replace: true,
-      templateUrl: 'views/loading-screen.html',
+      templateUrl: 'directives/loading-screen.html',
       scope: {},
       link: function($scope, $elm, $attrs) {
         $scope.loading = false;
