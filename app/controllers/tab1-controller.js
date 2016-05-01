@@ -1,9 +1,11 @@
 (function() {
   'use strict';
 
-  function Tab1Controller($uibModal) {
+  function Tab1Controller($uibModal, $timeout, LoadingScreenService) {
     console.log('Tab1Controller: constructor');
     this.$uibModal = $uibModal;
+    this.$timeout = $timeout;
+    this.LoadingScreenService = LoadingScreenService;
     this.modalResult = null;
   }
   Tab1Controller.prototype.onLongPress = function(value) {
@@ -28,8 +30,15 @@
       vm.modalResult = null;
     });
   };
+  Tab1Controller.prototype.startLoading = function(time) {
+    var vm = this;
+    this.LoadingScreenService.begin();
+    this.$timeout(function() {
+      vm.LoadingScreenService.end();
+    }, time);
+  };
 
   angular.module('app').controller('Tab1Controller', [
-    '$uibModal', Tab1Controller
+    '$uibModal', '$timeout', 'LoadingScreenService', Tab1Controller
   ]);
 })();
