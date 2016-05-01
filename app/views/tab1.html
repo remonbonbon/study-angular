@@ -3,4 +3,10 @@
   <button type="button" class="btn btn-default"
           ng-click="tabCtrl.open()">Open modal</button>
   <p>Modal result = {{ tabCtrl.modalResult }}</p>
+  <button type="button" class="btn btn-default"
+          on-long-press="tabCtrl.onLongPress('default')"
+          >Long press (default)</button>
+  <button type="button" class="btn btn-default"
+          on-long-press="tabCtrl.onLongPress('500ms')"
+          long-press-timeout="100">Long press (500ms)</button>
 </div>

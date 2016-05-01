@@ -6,6 +6,9 @@
     this.$uibModal = $uibModal;
     this.modalResult = null;
   }
+  Tab1Controller.prototype.onLongPress = function(value) {
+    console.log('Tab1Controller: on Long press', value);
+  };
   Tab1Controller.prototype.open = function() {
     console.log('Tab1Controller: open modal');
     var modalInstance = this.$uibModal.open({
