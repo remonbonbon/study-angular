@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 'use strict';
-const express = require('express');
-const compress = require('compression');
+var express = require('express');
+var compress = require('compression');
 
-const PORT = 8000;
+var PORT = 8000;
 
-const app = express();
+var app = express();
 app.use(compress());
 app.use('/', express.static('./app'));
-app.listen(PORT, () => {
+app.listen(PORT, function() {
   console.log('Listening on port %d', PORT);
 });

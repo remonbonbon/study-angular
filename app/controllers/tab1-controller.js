@@ -10,6 +10,8 @@
     console.log('Tab1Controller: on Long press', value);
   };
   Tab1Controller.prototype.open = function() {
+    var vm = this;
+
     console.log('Tab1Controller: open modal');
     var modalInstance = this.$uibModal.open({
       templateUrl: 'views/modal.html',
@@ -18,12 +20,12 @@
       size: 'lg',
     });
 
-    modalInstance.result.then(result => {
+    modalInstance.result.then(function(result) {
       console.log('Tab1Controller: modal closed: result =', result);
-      this.modalResult = result;
-    }, reason => {
+      vm.modalResult = result;
+    }, function(reason) {
       console.log('Tab1Controller: modal dismissed:', reason);
-      this.modalResult = null;
+      vm.modalResult = null;
     });
   };
 
