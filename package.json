@@ -1,0 +1,18 @@
+{
+  "name": "study-angular",
+  "version": "1.0.0",
+  "description": "A study on AngularJS",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remonbonbon/study-angular.git"
+  },
+  "author": "remonbonbon",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.6.1",
+    "express": "^4.13.4"
+  }
+}
