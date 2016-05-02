@@ -1,1 +1,16 @@
-<h1>tab2</h1>
+<div ng-controller="Tab2Controller as tabCtrl">
+  <h1>tab2</h1>
+  <div ng-repeat="item in tabCtrl.items track by $index">
+    <button type="button"
+            style="width: 100%"
+            class="btn btn-xs btn-default"
+            ng-click="item.isCollapsed = !item.isCollapsed">
+      <span class="glyphicon"
+            ng-class="{'glyphicon-chevron-up': !item.isCollapsed,
+                      'glyphicon-chevron-down': item.isCollapsed}"></span>
+    </button>
+    <div uib-collapse="item.isCollapsed">
+      <div class="well well-lg">{{item.content}}</div>
+    </div>
+  </div>
+</div>
