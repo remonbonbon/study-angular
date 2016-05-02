@@ -2,14 +2,14 @@
   'use strict';
 
   angular.module('app')
-  .factory('LoadingScreenService', ['$rootScope', function($rootScope) {
+  .factory('loadingScreenService', ['$rootScope', function($rootScope) {
     return {
       begin: function() {
-        console.log('LoadingScreenService: loading begin');
+        console.log('loadingScreenService: loading begin');
         $rootScope.$broadcast('loading:begin');
       },
       end: function() {
-        console.log('LoadingScreenService: loading end');
+        console.log('loadingScreenService: loading end');
         $rootScope.$broadcast('loading:end');
       },
     };

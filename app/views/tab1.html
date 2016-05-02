@@ -1,25 +1,25 @@
-<div ng-controller="Tab1Controller as tabCtrl">
+<div ng-controller="Tab1Controller as tab">
   <h1>tab1</h1>
   <button type="button" class="btn btn-default"
-          ng-click="tabCtrl.open()">Open modal</button>
-  <p>Modal result = {{ tabCtrl.modalResult }}</p>
+          ng-click="tab.open()">Open modal</button>
+  <p>Modal result = {{ tab.modalResult }}</p>
   <div>
     <button type="button" class="btn btn-default"
-            on-long-press="tabCtrl.onLongPress('default')"
+            on-long-press="tab.onLongPress('default')"
             >Long press (default)</button>
     <button type="button" class="btn btn-default"
-            on-long-press="tabCtrl.onLongPress('500ms')"
+            on-long-press="tab.onLongPress('500ms')"
             long-press-timeout="500">Long press (500ms)</button>
   </div>
   <div>
     <button type="button" class="btn btn-default"
-            ng-click="tabCtrl.startLoading(2000)"
+            ng-click="tab.startLoading(2000)"
             >Start loading (2000ms)</button>
   </div>
   <div>
     <button type="button" class="btn btn-default"
             on-long-press
-            editable="tabCtrl.editText"
+            editable="tab.editText"
             editable-on="longpress"></button>
   </div>
 </div>

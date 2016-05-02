@@ -10,40 +10,40 @@
         editable: '=',
         onChange: '&',
       },
-      link: function($scope, $elm, $attrs) {
-        $scope.editing = false;
+      link: function(scope, element, attrs) {
+        scope.editing = false;
 
-        $elm.bind($attrs.editableOn || 'click', function() {
-          $scope.begin();
+        element.bind(attrs.editableOn || 'click', function() {
+          scope.begin();
         });
 
-        $scope.begin = function() {
-          if ($scope.editing) return;
+        scope.begin = function() {
+          if (scope.editing) return;
           console.log('editable: begin');
-          $scope.editing = true;
-          $scope.editingText = $scope.editable;
+          scope.editing = true;
+          scope.editingText = scope.editable;
           // Focus after the input element is shown.
           $timeout(function() {
-            $elm.find('input')[0].focus();
+            element.find('input')[0].focus();
           }, 0);
         };
-        $scope.cancel = function() {
-          if (!$scope.editing) return;
+        scope.cancel = function() {
+          if (!scope.editing) return;
           console.log('editable: cancel');
-          $scope.editing = false;
+          scope.editing = false;
         };
-        $scope.done = function() {
-          if (!$scope.editing) return;
+        scope.done = function() {
+          if (!scope.editing) return;
           console.log('editable: done');
-          $scope.editing = false;
-          $scope.editable = $scope.editingText;
+          scope.editing = false;
+          scope.editable = scope.editingText;
         };
-        $scope.onKeydown = function(event) {
+        scope.onKeydown = function(event) {
           var key = event.keyCode || event.which;
           // On Escape key
-          if (key === 27) return $scope.cancel();
+          if (key === 27) return scope.cancel();
           // On Enter key
-          if (key === 13) return $scope.done();
+          if (key === 13) return scope.done();
         };
       }
     };

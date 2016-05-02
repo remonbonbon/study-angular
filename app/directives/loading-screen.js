@@ -8,9 +8,9 @@
       replace: true,
       templateUrl: 'directives/loading-screen.html',
       scope: {},
-      link: function($scope, $elm, $attrs) {
-        $scope.loading = false;
-        $scope.spinner = new SpinJSSpinner({
+      link: function(scope, element, attrs) {
+        scope.loading = false;
+        scope.spinner = new SpinJSSpinner({
             lines: 13 // The number of lines to draw
           , length: 30 // The length of each line
           , width: 12 // The line thickness
@@ -33,18 +33,18 @@
           , position: 'absolute' // Element positioning
         });
 
-        $scope.$on('loading:begin', function(event) {
-          $scope.loading = true;
-          $scope.spinner.spin($elm[0]);
+        scope.$on('loading:begin', function(event) {
+          scope.loading = true;
+          scope.spinner.spin(element[0]);
         });
-        $scope.$on('loading:end', function(event) {
-          $scope.loading = false;
-          $scope.spinner.stop();
+        scope.$on('loading:end', function(event) {
+          scope.loading = false;
+          scope.spinner.stop();
         });
-        $scope.$on('$destroy', function () {
-          $scope.loading = false;
-          $scope.spinner.stop();
-          $scope.spinner = null;
+        scope.$on('$destroy', function () {
+          scope.loading = false;
+          scope.spinner.stop();
+          scope.spinner = null;
         });
       }
     };
