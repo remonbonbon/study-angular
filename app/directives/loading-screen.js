@@ -64,5 +64,6 @@
         },
       };
     }])
+    .constant('SpinJSSpinner', Spinner)
     .directive('loadingScreen', ['SpinJSSpinner', loadingScreen]);
 })();

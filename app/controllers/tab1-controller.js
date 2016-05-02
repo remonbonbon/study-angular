@@ -7,6 +7,7 @@
     this.$timeout = $timeout;
     this.LoadingScreenService = LoadingScreenService;
     this.modalResult = null;
+    this.editText = 'Editable on long press';
   }
   Tab1Controller.prototype.onLongPress = function(value) {
     console.log('Tab1Controller: on Long press', value);

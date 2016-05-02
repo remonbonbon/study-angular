@@ -1,0 +1,9 @@
+<span style="width: 100%"
+      ng-show="!editing"
+      on-long-press="begin()">{{ editableModel }}</span>
+<input type="text"
+       style="width: 100%"
+       ng-model="editingText"
+       ng-show="editing"
+       ng-keydown="onKeydown($event)"
+       ng-blur="done()">
