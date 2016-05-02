@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function Tab1Controller($timeout, $uibModal, loadingScreenService) {
+  function Tab1Controller($timeout, $uibModal, loadingScreenService, loggerService) {
     console.log('Tab1Controller: constructor');
     this.modalResult = null;
     this.editText = 'Editable on long press';
@@ -33,9 +33,12 @@
         loadingScreenService.end();
       }, time);
     };
+    this.logger = function(type) {
+      loggerService[type]('Message ' + new Date().toLocaleString());
+    };
   }
 
   angular.module('app').controller('Tab1Controller', [
-    '$timeout', '$uibModal', 'loadingScreenService', Tab1Controller
+    '$timeout', '$uibModal', 'loadingScreenService', 'loggerService', Tab1Controller
   ]);
 })();

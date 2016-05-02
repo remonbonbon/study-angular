@@ -1,0 +1,6 @@
+<div class="alertsContainer">
+  <uib-alert ng-repeat="al in alerts track by al.id"
+             type="{{al.type}}"
+             dismiss-on-timeout="{{al.timeout}}"
+             close="closeAlert(al.id)">{{al.message}}</uib-alert>
+</div>

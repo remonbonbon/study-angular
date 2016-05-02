@@ -22,4 +22,14 @@
             editable="tab.editText"
             editable-on="longpress"></button>
   </div>
+  <div>
+    <button type="button" class="btn btn-info"
+            ng-click="tab.logger('debug')">Logger debug</button>
+    <button type="button" class="btn btn-success"
+            ng-click="tab.logger('info')">Logger info</button>
+    <button type="button" class="btn btn-warning"
+            ng-click="tab.logger('warn')">Logger warn</button>
+    <button type="button" class="btn btn-danger"
+            ng-click="tab.logger('error')">Logger error</button>
+  </div>
 </div>

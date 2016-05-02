@@ -2,7 +2,6 @@
   'use strict';
 
   function loadingScreen(SpinJSSpinner) {
-    console.log('loadingScreen: constructor');
     return {
       restrict: 'E',
       replace: true,
@@ -41,7 +40,7 @@
           scope.loading = false;
           scope.spinner.stop();
         });
-        scope.$on('$destroy', function () {
+        scope.$on('$destroy', function() {
           scope.loading = false;
           scope.spinner.stop();
           scope.spinner = null;

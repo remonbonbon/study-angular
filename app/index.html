@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <title>My HTML File</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="directives/alerts.css">
   <link rel="stylesheet" href="directives/loading-screen.css">
 </head>
 <body>
   <loading-screen></loading-screen>
+  <alerts></alerts>
   <div class="container">
     <ng-include src="'views/header.html'"></ng-include>
     <uib-tabset>
@@ -28,6 +30,8 @@
   <!-- app -->
   <script src="app.js"></script>
   <script src="services/loading-screen.js"></script>
+  <script src="services/logger.js"></script>
+  <script src="directives/alerts.js"></script>
   <script src="directives/long-press.js"></script>
   <script src="directives/loading-screen.js"></script>
   <script src="directives/editable.js"></script>

@@ -4,11 +4,11 @@
   width: 100vw;
   height: 100vh;
   z-index: 10000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s ease;
-}
-.loadingScreen--show {
+
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
   opacity: 1;
-  visibility: visible;
+}
+.loadingScreen.ng-hide {
+  opacity: 0;
 }
