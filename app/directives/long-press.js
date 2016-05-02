@@ -13,7 +13,8 @@
             // If the mouseup event hasn't fired,
             // apply the function given in on the element's on-long-press attribute
             $scope.$apply(function() {
-              $scope.$eval($attrs.onLongPress)
+              $scope.$eval($attrs.onLongPress);
+              $elm.triggerHandler('longpress');
             });
           }, longPressTimeout);
         });

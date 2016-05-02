@@ -7,16 +7,21 @@
       replace: false,
       templateUrl: 'directives/editable.html',
       scope: {
-        editableModel: '=',
+        editable: '=',
         onChange: '&',
       },
       link: function($scope, $elm, $attrs) {
         $scope.editing = false;
 
+        $elm.bind($attrs.editableOn || 'click', function() {
+          $scope.begin();
+        });
+
         $scope.begin = function() {
+          if ($scope.editing) return;
           console.log('editable: begin');
           $scope.editing = true;
-          $scope.editingText = $scope.editableModel;
+          $scope.editingText = $scope.editable;
           // Focus after the input element is shown.
           $timeout(function() {
             $elm.find('input')[0].focus();
@@ -31,7 +36,7 @@
           if (!$scope.editing) return;
           console.log('editable: done');
           $scope.editing = false;
-          $scope.editableModel = $scope.editingText;
+          $scope.editable = $scope.editingText;
         };
         $scope.onKeydown = function(event) {
           var key = event.keyCode || event.which;
