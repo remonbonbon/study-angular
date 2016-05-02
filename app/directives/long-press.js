@@ -14,8 +14,8 @@
             // apply the function given in on the element's on-long-press attribute
             $scope.$apply(function() {
               $scope.$eval($attrs.onLongPress);
-              $elm.triggerHandler('longpress');
             });
+            $elm.triggerHandler('longpress');
           }, longPressTimeout);
         });
 

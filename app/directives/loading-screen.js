@@ -4,13 +4,12 @@
   function loadingScreen(SpinJSSpinner) {
     console.log('loadingScreen: constructor');
     return {
-      restrict: 'A',
+      restrict: 'E',
       replace: true,
       templateUrl: 'directives/loading-screen.html',
       scope: {},
       link: function($scope, $elm, $attrs) {
         $scope.loading = false;
-        $scope.target = $elm[0];
         $scope.spinner = new SpinJSSpinner({
             lines: 13 // The number of lines to draw
           , length: 30 // The length of each line
@@ -36,7 +35,7 @@
 
         $scope.$on('loading:begin', function(event) {
           $scope.loading = true;
-          $scope.spinner.spin($scope.target);
+          $scope.spinner.spin($elm[0]);
         });
         $scope.$on('loading:end', function(event) {
           $scope.loading = false;
