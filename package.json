@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A study on AngularJS",
   "scripts": {
-    "start": "node server.js"
+    "start": "cd ./app && python -m SimpleHTTPServer 8000"
   },
   "repository": {
     "type": "git",
