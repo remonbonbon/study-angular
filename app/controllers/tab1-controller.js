@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function Tab1Controller($uibModal, $timeout, LoadingScreenService) {
+  function Tab1Controller($timeout, $uibModal, LoadingScreenService) {
     console.log('Tab1Controller: constructor');
     this.$uibModal = $uibModal;
     this.$timeout = $timeout;
@@ -40,6 +40,6 @@
   };
 
   angular.module('app').controller('Tab1Controller', [
-    '$uibModal', '$timeout', 'LoadingScreenService', Tab1Controller
+    '$timeout', '$uibModal', 'LoadingScreenService', Tab1Controller
   ]);
 })();
