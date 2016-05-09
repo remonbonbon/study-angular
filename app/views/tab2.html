@@ -1,8 +1,20 @@
 <div ng-controller="Tab2Controller as tab">
   <h1>tab2</h1>
-  <div ng-repeat="item in tab.items track by $index">
+  <div ng-repeat="item in tab.items track by item.id">
     <button type="button"
-            style="width: 100%"
+            style="width: 2em"
+            class="btn btn-xs btn-default"
+            ng-click="tab.moveUp($index)">
+      <span class="glyphicon glyphicon-arrow-up"></span>
+    </button>
+    <button type="button"
+            style="width: 2em"
+            class="btn btn-xs btn-default"
+            ng-click="tab.moveDown($index)">
+      <span class="glyphicon glyphicon-arrow-down"></span>
+    </button>
+    <button type="button"
+            style="width: calc(100% - 5em)"
             class="btn btn-xs btn-default"
             ng-click="item.isCollapsed = !item.isCollapsed">
       <span class="glyphicon"
@@ -10,7 +22,9 @@
                       'glyphicon-chevron-down': item.isCollapsed}"></span>
     </button>
     <div uib-collapse="item.isCollapsed">
-      <div class="well well-lg">{{item.content}}</div>
+      <div class="well well-lg">
+        <strong ng-style="{{item.style}}">{{item.content}}</strong>
+      </div>
     </div>
   </div>
 </div>
